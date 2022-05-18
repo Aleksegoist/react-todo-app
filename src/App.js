@@ -37,6 +37,19 @@ function App() {
         setItems(items.filter((item) => item.id !== id));
     };
 
+    const updatePos = (data, index) => {
+        let newArray = [...items];
+        newArray[index].defaultPos = { x: data.x, y: data.y };
+        setItems(newArray);
+    };
+
+    const keyPress = (e) => {
+        const code = e.keyCode || e.which;
+        if (code === 13) {
+            addItem();
+        }
+    };
+
     return (
         <div className='App'>
             <div className='wrapper'>
@@ -45,6 +58,7 @@ function App() {
                     onChange={(e) => setItem(e.target.value)}
                     type='text'
                     placeholder='What do you want to do...'
+                    onKeyPress={(e) => keyPress(e)}
                 />
                 <button onClick={addItem} className='addBtn'>
                     ADD
@@ -55,7 +69,9 @@ function App() {
                     <Draggable
                         key={index}
                         defaultPosition={item.defaultPos}
-                        onStop={(e, data) => {}}
+                        onStop={(_, data) => {
+                            updatePos(data, index);
+                        }}
                     >
                         <div
                             className='todo__item'
