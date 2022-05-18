@@ -11,7 +11,7 @@ function App() {
     );
 
     useEffect(() => {
-        localStorage.setItem('item', JSON.stringify(items));
+        localStorage.setItem('items', JSON.stringify(items));
     }, [items]);
 
     const addItem = () => {
@@ -21,8 +21,8 @@ function App() {
                 item: item,
                 color: randomColor({ luminosity: 'light' }),
                 defaultPos: {
-                    x: 500,
-                    y: -500,
+                    x: 700,
+                    y: -600,
                 },
             };
             setItems((items) => [...items, newItem]);
