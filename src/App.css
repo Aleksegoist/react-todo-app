@@ -8,5 +8,57 @@
 }
 
 input {
+  height: 30px;
+  width: 250px;
+  border: none;
+  border-bottom: 1px solid whitesmoke;
+  font-size: 14px;
+  background: none;
+  color: white;
+  padding: 0 10px;
+  outline: none;
+
+}
+
+.addBtn {
+  background-color: #161829;
+  width: 100px;
+  height: 30px;
+  border: none;
+  font-size: 14px;
+  color: white;
+  border: 1px solid whitesmoke;
+  font: bold;
   
+}
+
+.addBtn:hover {
+  background-color: whitesmoke;
+  color: #161829;
+  cursor: pointer;
+  font: bold;
+}
+
+.todo__item {
+  position: absolute;
+  cursor: move;
+  min-width: 215px;
+  color: black;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.delete {
+  position: absolute;
+  right: 1px;
+  top: 2px;
+  border: none;
+  background: none;
+  font-size: 14px;
+}
+
+.delete:hover {
+  color: red;
+  cursor: pointer;
+  font:bold;
 }
